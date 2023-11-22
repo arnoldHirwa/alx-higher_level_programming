@@ -23,7 +23,7 @@ class Square:
     @size.setter
     def size(self, value):
         """The summary line for a class docstring should fit on one line."""
-        if type(value) == int:
+        if type(value) is int:
             if value >= 0:
                 self._size = value
             else:
