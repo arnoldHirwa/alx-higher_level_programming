@@ -54,12 +54,12 @@ class SinglyLinkedList:
     def __str__(self):
         """make list printable"""
 
-        printsll = ""
-        location = self.head
-        while location:
-            printsll += str(location.data) + "\n"
-            location = location.next_node
-        return printsll[:-1]
+        printstr = ""
+        current = self.head
+        while current:
+            printstr += str(current.data) + "\n"
+            current = current.next_node
+        return printstr[:-1]
 
     def sorted_insert(self, value):
         """insert in a sorted fashion
@@ -74,9 +74,9 @@ class SinglyLinkedList:
             new.next_node = self.head
             self.head = new
             return
-        location = self.head
-        while location.next_node and location.next_node.data < value:
-            location = location.next_node
-        if location.next_node:
-            new.next_node = location.next_node
-        location.next_node = new
+        current = self.head
+        while current.next_node and current.next_node.data < value:
+            current = current.next_node
+        if current.next_node:
+            new.next_node = current.next_node
+        current.next_node = new
