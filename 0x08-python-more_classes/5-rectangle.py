@@ -1,13 +1,9 @@
 #!/usr/bin/python3
-"""
-This is the "Rectangle"  module.
-
-This module provides a Rectangle class.
-"""
+"""This module provides a Rectangle class."""
 
 
 class Rectangle:
-    """A Rectangle class with attributes width and height, and
+    """Aclass with attributes width and height, and
     methods area, perimeter, print, str, repr, and del.
     """
     def __init__(self, width=0, height=0):

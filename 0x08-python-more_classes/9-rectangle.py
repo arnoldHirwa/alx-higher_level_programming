@@ -1,18 +1,12 @@
 #!/usr/bin/python3
-"""
-This is the "Rectangle"  module.
-
-This module provides a Rectangle class.
-"""
+"""This module provides a Rectangle class."""
 
 
 class Rectangle:
-    """A Rectangle class with attributes width and height,
+    """A class with attributes width and height,
     methods area, perimeter, print, str, repr, and del, and
     class attribute number_of_instances that keeps track of # of instances,
-    class attribute print_symbol which is used as symbol for printing,
-    static method bigger_or_equal that returns biggest rectangle,
-    and class method square that returns a new Rectangle.
+    etc.
     """
     number_of_instances = 0
     print_symbol = "#"
