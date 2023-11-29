@@ -1,0 +1,116 @@
+The ``2-matrix_divided`` module
+==============================
+
+Using ``matrix_divided``
+---------------------
+
+This is a file in reStructured Text format. First add ``matrix_divided`` from the ``2-matrix_divided`` module:
+
+>>> matrix_divided = __import__('2-matrix_divided').matrix_divided
+
+Now use it:
+
+
+
+Test without matrix
+----------------------------------------------------------------------------------------
+>>> matrix_divided()
+Traceback (most recent call last):
+    ...
+TypeError: matrix_divided() missing 2 required positional arguments: 'matrix' and 'div'
+
+
+
+Test int instead of matrix
+----------------------------------------------------------------------------------------
+>>> matrix_divided(5, 2)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+
+Test tuple instead of matrix
+----------------------------------------------------------------------------------------
+>>> matrix_divided((1, 2, 3), 1)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+
+Test unequal rows
+---------------------------------------------------------------------------------------
+>>> matrix_divided([[1, 2, 3], [4, 5]], 1)
+Traceback (most recent call last):
+    ...
+TypeError: Each row of the matrix must have the same size
+
+
+
+Matrix may be an array with only zero
+---------------------------------------------------------------------------------------
+>>> matrix_divided([[0]], 1)
+[[0.0]]
+
+
+
+Only integers and floats may be provided.
+---------------------------------------------------------------------------------------
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], "School")
+Traceback (most recent call last):
+    ...
+TypeError: div must be a number
+
+
+
+Test divide by zero
+---------------------------------------------------------------------------------------
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 0)
+Traceback (most recent call last):
+    ...
+ZeroDivisionError: division by zero
+
+
+
+Test infinite number
+---------------------------------------------------------------------------------------
+>>> matrix_divided([[1, 2], [3, 4]], float('inf'))
+[[0.0, 0.0], [0.0, 0.0]]
+
+Test nan
+---------------------------------------------------------------------------------------
+>>> matrix_divided([[0]], float('nan'))
+[[nan]]
+
+Test a Basic Matrix
+-----------------------------------------------------------------------------------------
+>>> matrix_divided([[1, 2, 3], [4, 5, 6]], 2)
+[[0.5, 1.0, 1.5], [2.0, 2.5, 3.0]]
+
+
+
+Test for empty matrix
+-----------------------------------------------------------------------------------------
+>>> matrix_divided([], 1)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+
+Test for empty row
+----------------------------------------------------------------------------------------
+>>> matrix_divided([[]], 1)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
+
+
+
+Test None instead of matrix
+----------------------------------------------------------------------------------------
+>>> matrix_divided(None, 1)
+Traceback (most recent call last):
+    ...
+TypeError: matrix must be a matrix (list of lists) of integers/floats
