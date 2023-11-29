@@ -1,8 +1,5 @@
 #!/usr/bin/python3
-"""
-This is print square module.
-"""
-
+"""This is print square module."""
 
 def print_square(size):
     """

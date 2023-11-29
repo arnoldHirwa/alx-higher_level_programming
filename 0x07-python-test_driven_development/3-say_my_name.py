@@ -1,6 +1,6 @@
 #!/usr/bin/python3
 """
-This is the "Say My Name" module.
+This is "Say My Name" module.
 """
 
 
