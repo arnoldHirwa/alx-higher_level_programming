@@ -1,0 +1,96 @@
+The Module to 1-my_list
+----------------------------------------------------------------------------------------------
+
+Using print_sorted
+----------------------------------------------------------------------------------------------
+
+This is a text file in reStructured Text format. Step 1 is import print_sorted from the 1-my_list module:
+
+>>> MyList = __import__('1-my_list').MyList
+
+Now use it:
+
+TEST1 - Empty List
+---------------------------------------------------------------------------------
+>>> my_list = MyList()
+>>> my_list.print_sorted()
+[]
+
+
+TEST2 - list with string element
+---------------------------------------------------------------------------------
+>>> a_list = MyList('a')
+>>> a_list.print_sorted()
+['a']
+
+
+TEST3 - list with several string elements
+---------------------------------------------------------------------------------
+>>> str_list = MyList('string')
+>>> str_list.print_sorted()
+['g', 'i', 'n', 'r', 's', 't']
+
+
+
+TEST4 - append elements to list
+---------------------------------------------------------------------------------
+>>> my_list.append(1)
+>>> my_list.append(4)
+>>> my_list.append(2)
+>>> my_list.append(3)
+>>> my_list.append(5)
+>>> my_list.print_sorted()
+[1, 2, 3, 4, 5]
+
+
+TEST5 - compare original string with sorted list
+---------------------------------------------------------------------------------
+>>> print(my_list)
+[1, 4, 2, 3, 5]
+>>> my_list.print_sorted() == my_list
+[1, 2, 3, 4, 5]
+False
+
+
+TEST6 - append several zeros in list
+---------------------------------------------------------------------------------
+>>> zero_list = MyList()
+>>> zero_list.append(0)
+>>> zero_list.append(0)
+>>> zero_list.append(0)
+>>> zero_list.append(0)
+>>> zero_list.append(0)
+>>> zero_list.print_sorted()
+[0, 0, 0, 0, 0]
+
+
+TEST7 - list with float element
+---------------------------------------------------------------------------------
+>>> float_list = MyList(3.5)
+Traceback (most recent call last):
+...
+TypeError: 'float' object is not iterable
+
+
+TEST8 - test the inf in the list
+---------------------------------------------------------------------------------
+>>> inf_list = MyList(float('inf'))
+Traceback (most recent call last):
+...
+TypeError: 'float' object is not iterable
+
+
+TEST9 - test the nan in the list
+--------------------------------------------------------------------------------
+>>> nan_list = MyList(float('nan'))
+Traceback (most recent call last):
+...
+TypeError: 'float' object is not iterable
+
+TEST10 - test the two types in sorted
+--------------------------------------------------------------------------------
+>>> my_list.append('a')
+>>> my_list.print_sorted()
+Traceback (most recent call last):
+...
+TypeError: unorderable types: str() < int()

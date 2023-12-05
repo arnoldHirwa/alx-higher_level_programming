@@ -1,0 +1,130 @@
+The Module 7-base_geometry 
+-------------------------------------------------------------------------------------------------------------
+
+Using integer_validator
+-------------------------------------------------------------------------------------------------------------
+
+This is a text file in reStructured Text format. step 1: import integer_validator from the 7-base_geometry module:
+
+>>> BaseGeometry = __import__('7-base_geometry').BaseGeometry
+
+Now use it:
+-------------------------------------------------------------------------------------------------------------
+
+TEST1
+-------------------------------------------------------------------------------------------------------------
+>>> bg = BaseGeometry()
+>>> bg.integer_validator("my_int", 12)
+
+
+TEST2
+-------------------------------------------------------------------------------------------------------------
+>>> bg.integer_validator("width", 89)
+
+
+TEST3
+-------------------------------------------------------------------------------------------------------------
+>>> bg.integer_validator("", 50)
+
+TEST4
+-------------------------------------------------------------------------------------------------------------
+>>> bg.area()
+Traceback (most recent call last):
+...
+Exception: area() is not implemented
+
+TEST5
+------------------------------------------------------------------------------------------------------------
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+...
+TypeError: name must be an integer
+
+
+TEST6
+------------------------------------------------------------------------------------------------------------
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+...
+ValueError: age must be greater than 0
+
+TEST7
+------------------------------------------------------------------------------------------------------------
+>>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+...
+ValueError: distance must be greater than 0
+
+TEST8
+------------------------------------------------------------------------------------------------------------
+>>> bg.integer_validator("float", 3.5)
+Traceback (most recent call last):
+...
+TypeError: float must be an integer
+
+TEST9
+------------------------------------------------------------------------------------------------------------
+>>> bg.integer_validator("infinity", float('inf'))
+Traceback (most recent call last):
+...
+TypeError: infinity must be an integer
+
+
+TEST10
+----------------------------------------------------------------------------------------------------------
+>>> bg.integer_validator("nan", float('nan'))
+Traceback (most recent call last):
+...
+TypeError: nan must be an integer
+
+
+TEST11
+-----------------------------------------------------------------------------------------------------------
+>>> bg.integer_validator("list", [1, 2, 3])
+Traceback (most recent call last):
+...
+TypeError: list must be an integer
+
+TEST12
+-----------------------------------------------------------------------------------------------------------
+>>> bg.integer_validator("tuple", (1, 2, 3))
+Traceback (most recent call last):
+...
+TypeError: tuple must be an integer
+
+TEST13
+-----------------------------------------------------------------------------------------------------------
+>>> bg.integer_validator("bool", True)
+Traceback (most recent call last):
+...
+TypeError: bool must be an integer
+
+TEST14
+-----------------------------------------------------------------------------------------------------------
+>>> bg.integer_validator("set", {1, 2})
+Traceback (most recent call last):
+...
+TypeError: set must be an integer
+
+
+TEST15
+----------------------------------------------------------------------------------------------------------
+>>> bg.integer_validator("none", None)
+Traceback (most recent call last):
+...
+TypeError: none must be an integer
+
+
+TEST16
+----------------------------------------------------------------------------------------------------------
+>>> bg.integer_validator()
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+TEST17
+----------------------------------------------------------------------------------------------------------
+>>> bg.integer_validator("arg")
+Traceback (most recent call last):
+...
+TypeError: integer_validator() missing 1 required positional argument: 'value'
