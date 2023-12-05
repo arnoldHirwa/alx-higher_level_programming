@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module to task 11"""
+"""Module for task 11"""
 
 
 class BaseGeometry:
@@ -11,7 +11,7 @@ class BaseGeometry:
 
     def integer_validator(self, name, value):
         """To validate value."""
-        if type(value) != int:
+        if type(value) is not int:
             raise TypeError('{} must be an integer'.format(name))
         if value <= 0:
             raise ValueError('{} must be greater than 0'.format(name))

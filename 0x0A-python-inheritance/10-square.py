@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module to task 10"""
+"""Module of task 10"""
 Rectangle = __import__('9-rectangle').Rectangle
 
 

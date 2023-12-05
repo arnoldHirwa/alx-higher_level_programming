@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """A module for task 4"""
 
+
 def inherits_from(obj, a_class):
     """Returns true if instance of class that
         inherited a_class"""

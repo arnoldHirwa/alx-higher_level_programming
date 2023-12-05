@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module to Task Advanced 100"""
+"""Module for Advanced Task 100"""
 
 
 class MyInt(int):

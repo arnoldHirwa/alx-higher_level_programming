@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Module to Task 101"""
+"""Module for Task 101"""
 
 
 def add_attribute(self, attribute, value):
