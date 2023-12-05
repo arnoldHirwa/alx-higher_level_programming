@@ -1,8 +1,9 @@
 #!/usr/bin/python3
-"""A module for task 2"""
+"""Module to Task 2."""
+
 
 def is_same_class(obj, a_class):
-    """Check is obj is insance of a_class"""
+    """Returns true or false, if object is an instance of class."""
     if type(obj) is a_class:
         return True
     else:
