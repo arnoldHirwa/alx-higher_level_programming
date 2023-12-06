@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""Defines a file-writing function."""
+"""Defines a file-writing fx."""
 
 
 def write_file(filename="", text=""):
