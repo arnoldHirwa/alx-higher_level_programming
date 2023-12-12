@@ -5,6 +5,7 @@
 # import csv
 # import turtle
 
+
 class Base():
     "The base class for shapes"
     __nb_objects = 0
