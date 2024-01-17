@@ -1,7 +1,7 @@
 # Learning Objectives
 At the end of this project, you are expected to be able to explain to anyone, without the help of Google:
 
-General
+## General
 What’s a database
 What’s a relational database
 What does SQL stand for
