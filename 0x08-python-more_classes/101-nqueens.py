@@ -4,7 +4,7 @@
 import sys
 
 # Set a higher recursion limit if needed
-sys.setrecursionlimit(1000000)
+sys.setrecursionlimit(10000000)
 
 
 class Queen():
