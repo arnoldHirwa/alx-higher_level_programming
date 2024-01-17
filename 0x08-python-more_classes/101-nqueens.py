@@ -3,7 +3,7 @@
 import sys
 
 # Set a higher recursion limit if needed
-sys.setrecursionlimit(100000)
+sys.setrecursionlimit(1000000)
 
 class Queen():
     queen_id = 0
