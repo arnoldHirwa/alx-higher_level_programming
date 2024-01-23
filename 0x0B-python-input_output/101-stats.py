@@ -22,7 +22,6 @@ if __name__ == "__main__":
             if i % 10 == 0 and i != 0:
                 printInfo(size, codes)
             i += 1
-            data = input()
             splitted = data.split()
             try:
                 size += int(splitted[-1])
