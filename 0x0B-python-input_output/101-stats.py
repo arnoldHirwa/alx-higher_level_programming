@@ -1,21 +1,21 @@
 #!/usr/bin/python3
 """A module for reading input commands from stdin"""
-import sys
-
-
-totalSize = 0
-codes = {}
-valid_codes = ['200', '301', '400', '401', '403', '404', '405', '500']
 
 
 def printInfo():
     """A function for printing information to stdout"""
     print("File size: ", totalSize)
-    for key in sorted(codes.keys()):
+    for key in sorted(codes):
         print(f"{key}: {codes[key]}")
 
 
 if __name__ == "__main__":
+    import sys
+
+    totalSize = 0
+    codes = {}
+    valid_codes = ['200', '301', '400', '401', '403', '404', '405', '500']
+
     i = 1
     while True:
         try:
@@ -35,6 +35,9 @@ if __name__ == "__main__":
 
             if i % 10 == 0:
                 printInfo()
+            if data == "":
+                printInfo()
+                break
         except KeyboardInterrupt:
             printInfo()
             raise
