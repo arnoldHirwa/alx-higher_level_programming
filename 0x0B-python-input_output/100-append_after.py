@@ -4,9 +4,6 @@
 
 def append_after(filename="", search_string="", new_string=""):
     """Insert text after each line containing a given string in a file.
-
-    Args:
-        filename (str): The name of the file.
     """
     text = ""
     with open(filename) as r:
