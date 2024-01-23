@@ -2,9 +2,9 @@
 """A module for reading input commands from stdin"""
 
 
-def printInfo():
+def printInfo(size, codes):
     """A function for printing information to stdout"""
-    print("File size: ", totalSize)
+    print("File size: ", size)
     for key in sorted(codes):
         print(f"{key}: {codes[key]}")
 
@@ -12,33 +12,30 @@ def printInfo():
 if __name__ == "__main__":
     import sys
 
-    totalSize = 0
+    size = 0
     codes = {}
-    valid_codes = ['200', '301', '400', '401', '403', '404', '405', '500']
+    valid_codes = [200, 301, 400, 401, 403, 404, 405, 500]
 
     i = 1
-    while True:
-        try:
+    try:
+        for data in sys.stdin:
             data = input()
             splitted = data.split()
             try:
-                size = splitted[-1]
-                totalSize += int(size)
+                size += int(splitted[-1])
             except Exception:
                 pass
             try:
                 code = int(splitted[-2])
-                if str(code) in valid_codes:
+                if code in valid_codes:
                     codes[code] = codes.get(code, 0) + 1
             except Exception:
                 pass
 
             if i % 10 == 0:
-                printInfo()
-            if data == "":
-                printInfo()
-                break
-        except KeyboardInterrupt:
-            printInfo()
-            raise
-        i += 1
+                printInfo(size, codes)
+            i += 1
+        printInfo(size, codes)
+    except KeyboardInterrupt:
+        printInfo(size, codes)
+        raise
