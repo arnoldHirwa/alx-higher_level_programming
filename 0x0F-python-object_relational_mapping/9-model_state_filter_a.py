@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""
+"""A module that
 Lists all State objects that contain the letter a from the database
 """
 import sys
@@ -15,7 +15,7 @@ if __name__ == '__main__':
     Session = sessionmaker(bind=engine)
     session = Session()
 
-    states = session.query(State).filter(State.name.like('%a%')).all()
+    allsts = session.query(State).filter(State.name.like('%a%')).all()
 
-    for state in states:
+    for state in allsts:
         print("{}: {}".format(state.id, state.name))
