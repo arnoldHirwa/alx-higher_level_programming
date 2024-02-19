@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""
+""" A module that
 Deletes all State objects with a name containing the letter a
 """
 import sys
