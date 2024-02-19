@@ -1,5 +1,5 @@
 #!/usr/bin/python3
-"""
+"""A module that
 Adds the State object "Lousiana" to the database hbtn_0e_6_usa
 """
 import sys
@@ -14,9 +14,7 @@ if __name__ == '__main__':
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-
     newState = State(name='Louisiana')
     session.add(newState)
     session.commit()
-
     print(newState.id)
