@@ -1,7 +1,5 @@
 #!/usr/bin/python3
-"""
-Prints all City objects from the database hbtn_0e_14_usa
-"""
+"""A module for Printing all City objects from the database"""
 import sys
 from model_state import Base, State
 from model_city import City
@@ -15,8 +13,6 @@ if __name__ == '__main__':
                            pool_pre_ping=True)
     Session = sessionmaker(bind=engine)
     session = Session()
-
-    st_cty = session.query(State, City).filter(State.id == City.state_id).all()
-
-    for state, city in st_cty:
+    allcties = session.query(State, City).filter(State.id == City.state_id).all()
+    for state, city in allcties:
         print("{}: ({}) {}".format(state.name, city.id, city.name))
