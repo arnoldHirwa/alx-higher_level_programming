@@ -9,7 +9,8 @@ if __name__ == '__main__':
 
     cur = db.cursor()
     cur.execute("SELECT cities.id, cities.name, states.name \
-    FROM cities JOIN states ON cities.state_id = states.id;")
-    states = cur.fetchall()
-    for state in states:
-        print(state)
+                FROM cities INNER JOIN states \
+                ON cities.state_id = states.id;")
+    ct = cur.fetchall()
+    for c in ct:
+        print(c)
